@@ -1,0 +1,10 @@
+{
+  "name": "isp",
+  "version": "0.0.0",
+  "description": "The source code of the internal-staff-portal.",
+  "main": "none",
+  "repository": "https://github.com/internal-staff-portal/isp.git",
+  "author": "Laurenz1606 <laurenz.rausche@gmail.com>",
+  "license": "MIT",
+  "private": false
+}
