@@ -1,10 +1,24 @@
 {
   "name": "isp",
-  "version": "0.0.0",
+  "version": "0.0.0F/0.0.0B",
   "description": "The source code of the internal-staff-portal.",
   "main": "none",
   "repository": "https://github.com/internal-staff-portal/isp.git",
   "author": "Laurenz1606 <laurenz.rausche@gmail.com>",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "format:backend": "prettier -w backend/src",
+    "format:frontend": "prettier -w frontend/src",
+    "format:full": "yarn format:backend && format:frontend",
+    "build:backend": "cd backend && yarn build:full",
+    "build:frontend": "cd frontend && yarn build:full",
+    "build:full": "yarn build:clean && yarn build:backend && yarn build:frontend",
+    "build:clean": "rimraf bundle",
+    "dev:reinstall": "rimraf node_modules yarn.lock && yarn install"
+  },
+  "devDependencies": {
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2"
+  }
 }

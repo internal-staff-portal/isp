@@ -1,0 +1,44 @@
+{
+  "name": "frontend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build:compile": "yarn dev:format && yarn build:clean && react-scripts build",
+    "build:copy": "rimraf ../bundle/frontend/build && recursive-copy build ../bundle/frontend/build && cd ../frontend_deploy && recursive-copy index.js ../bundle/frontend/index.js && recursive-copy package.json ../bundle/frontend/package.json",
+    "build:clean": "rimraf build",
+    "build:full": "yarn build:compile && yarn build:copy && yarn build:clean",
+    "dev:start": "react-scripts start",
+    "dev:format": "cd .. && yarn format:frontend",
+    "dev:reinstall": "rimraf node_modules yarn.lock && yarn install"
+  },
+  "dependencies": {
+    "@types/node": "^16.7.13",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.4.2"
+  },
+  "devDependencies": {
+    "recursive-copy-cli": "^1.0.20",
+    "rimraf": "^3.0.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
