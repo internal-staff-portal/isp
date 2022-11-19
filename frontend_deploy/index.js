@@ -1,8 +1,12 @@
+const { Logger } = require("@laurenz1606/logger");
 const express = require("express");
 const path = require("path");
 
 //create express app
 const app = express();
+
+//create new logger
+const logger = new Logger({ format: "[%L] %t %m" });
 
 //get the api url for the backend (NEEDS TO BE AT THE TOP)
 app.get("/api_url", (req, res) => {
@@ -21,4 +25,4 @@ app.get("/*", function (req, res) {
 app.listen(process.env.PORT);
 
 //log app start
-console.log(`Started frontend on ${process.env.PORT}!`)
+logger.log("info", `Started frontend express server on ${process.env.PORT}!`);
