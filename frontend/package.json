@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build:compile": "yarn dev:format && yarn build:clean && react-scripts build",
-    "build:copy": "rimraf ../bundle/frontend/build && recursive-copy build ../bundle/frontend/build && cd ../frontend_deploy && recursive-copy index.js ../bundle/frontend/index.js && recursive-copy package.json ../bundle/frontend/package.json",
+    "build:copy": "rimraf ../bundle/frontend/* && recursive-copy build ../bundle/frontend/build && cd ../frontend_deploy && recursive-copy index.js ../bundle/frontend/index.js && recursive-copy package.json ../bundle/frontend/package.json",
     "build:clean": "rimraf build",
     "build:full": "yarn build:compile && yarn build:copy && yarn build:clean",
     "dev:start": "react-scripts start",
