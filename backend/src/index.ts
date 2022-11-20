@@ -17,4 +17,5 @@ if (env("NODE_ENV") !== "production") {
 }
 
 //load all modules
+import "./Modules/mongoose";
 import "./Modules/httpServer";

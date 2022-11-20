@@ -1,0 +1,12 @@
+NAME                         REQUIRED    DEFAULT        VALUES/INFO
+NODE_ENV                     yes         -              "production", "development", "test"
+MONGO_URL                    yes         -              Mongoose compatible URL to mongoDB database
+REDIS_URL                    yes         -              IORedis compatible URL to redis database
+AUTH_ACCESS_TOKEN_SECRET     yes         -              Secret for JWT accesstokens
+AUTH_REFRESH_TOKEN_SECRET    yes         -              Secret for JWT refresshtokens
+APP_PORT                     yes         "3000"         Numbers as strings from 0-65536
+DEBUG                        no          "0"            "0" (debug disabled), "1" (debug mode enabled)
+APP_CORS                     no          "*"            Cors origin string
+AUTH_VALIDATE_EMAIL          no          "1"            "0" (email validation disabled), "1" (email validation enabled)
+AUTH_EXPIRES_IN              no          "900"          Number of seconds an accesstokens is validation
+AUTH_PASSWORD_RULE           no          "Y-Y-Y-Y-8"    Password rule (more on that on authfunctions/express)
