@@ -1,7 +1,6 @@
 import cors from "cors";
 import express from "express";
 import { ApiRouter } from "../Routers/ApiRouter";
-import "./auth";
 import { env } from "../Utils/env";
 import { logger } from "./logger";
 import { auth } from "./auth";
